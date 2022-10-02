@@ -11,8 +11,31 @@ public class App {
 
     //todo Task 2
     public void stairs(){
-        // input your solution here
+        Scanner scan = new Scanner(System.in);
+        System.out.print("n: ");
+        int maxzeilen = scan.nextInt();
+        int counter = 1;
+        if (maxzeilen < 0){
+            System.out.println("Invalid number!");
+        };
+        for(int i = 0; i < maxzeilen; i++) {
+
+            for(int j = 0; j < maxzeilen; j++) {
+
+                if(i >= j)
+
+                    System.out.print(counter++ + " ");
+
+            }
+
+            System.out.println();
+
+        }
+
     }
+
+
+
 
     //todo Task 3
     public void printPyramid(){
