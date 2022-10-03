@@ -92,12 +92,61 @@ public class App {
 
     //todo Task 5
     public void marks(){
-        // input your solution here
+        Scanner scan = new Scanner(System.in);
+
+        double mark = 1;
+        int sum = 0;
+        int counter = 1;
+        double average = 0;
+        int negative = 0;
+        System.out.print("Number " + counter++ + ": ");
+        mark=scan.nextDouble();
+
+        while(mark > 0){
+            System.out.print("Number " + counter++ + ": ");
+            mark = scan.nextDouble();
+            average = (average + mark);
+
+            if(mark < 0 || mark >5 ){
+                System.out.println("Invalid mark!");
+                counter -= 1;
+
+            } else if (mark==5) {
+                negative += 1;
+            }
+        }
+        System.out.println("Negative marks: " + negative);
+        System.out.println("Average: " + average/counter);
     }
 
     //todo Task 6
     public void happyNumbers(){
-        // input your solution here
+        int i = 1;
+        int input;
+        int sum = 0;
+
+        System.out.print("n: ");
+        Scanner scan = new Scanner(System.in);
+        input = scan.nextInt();
+
+        while (input>9){
+
+            while (input > 0){
+
+                i = input % 10;
+                sum += (i*i);
+                input = input / 10;
+            }
+
+            input = sum;
+            sum = 0;
+        }
+        if(input==1){
+            System.out.println("Happy number!");
+        }
+        else {
+            System.out.println("Sad number!");
+        }
     }
 
     public static void main(String[] args){
