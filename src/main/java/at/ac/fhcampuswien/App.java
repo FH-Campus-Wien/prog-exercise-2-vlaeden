@@ -34,12 +34,16 @@ public class App {
 
     //todo Task 2
     public void stairs(){
+
         Scanner scan = new Scanner(System.in);
         System.out.print("n: ");
         int maxzeilen = scan.nextInt();
         int counter = 1;
+
         if (maxzeilen < 0){
+
             System.out.println("Invalid number!");
+
         }
         for(int i = 0; i < maxzeilen; i++) {
 
@@ -67,10 +71,14 @@ public class App {
         for (int i= 1; i <= rows; i++) {
 
             for( int j= i; j < rows; j++) {
+
                 System.out.print(" ");
+
             }
             for(int h = 1; h<i*2; h++) {
+
                 System.out.print("*");
+
             }
             System.out.println();
         }
