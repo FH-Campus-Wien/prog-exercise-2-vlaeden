@@ -1,5 +1,6 @@
 package at.ac.fhcampuswien;
 
+import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class App {
@@ -39,7 +40,18 @@ public class App {
 
     //todo Task 3
     public void printPyramid(){
-        // input your solution here
+        Scanner scan = new Scanner(System.in);
+        int rows = 6;
+        for (int i= 1; i <= rows; i++) {
+
+            for( int j= i; j < rows; j++) {
+                System.out.print(" ");
+            }
+            for(int h = 1; h<i*2; h++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
     }
 
     //todo Task 4
