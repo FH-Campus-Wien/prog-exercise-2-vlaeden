@@ -7,7 +7,29 @@ public class App {
 
     //todo Task 1
     public void largestNumber(){
-        // input your solution here
+        Scanner scan = new Scanner(System.in);
+        int counter = 1;
+        double input = 1;
+        double maxval =0;
+
+        System.out.print("Number " + counter + ": ");
+        counter++;
+        input = scan.nextDouble();
+
+        if (input <= 0){
+            System.out.println("No number entered.");
+            return;
+        }
+         while(input > 0){
+            System.out.print("Number " + counter++ + ": ");
+            input = scan.nextDouble();
+
+            if(input > maxval){
+                maxval = input;
+    }
+}
+        System.out.println("The largest number is " + String.format("%.2f", maxval));
+
     }
 
     //todo Task 2
@@ -18,7 +40,7 @@ public class App {
         int counter = 1;
         if (maxzeilen < 0){
             System.out.println("Invalid number!");
-        };
+        }
         for(int i = 0; i < maxzeilen; i++) {
 
             for(int j = 0; j < maxzeilen; j++) {
@@ -40,7 +62,7 @@ public class App {
 
     //todo Task 3
     public void printPyramid(){
-        Scanner scan = new Scanner(System.in);
+
         int rows = 6;
         for (int i= 1; i <= rows; i++) {
 
