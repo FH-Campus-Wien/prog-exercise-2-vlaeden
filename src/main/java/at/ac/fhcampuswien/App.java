@@ -87,8 +87,63 @@ public class App {
 
     //todo Task 4
     public void printRhombus(){
-        // input your solution here
+        Scanner scan = new Scanner(System.in);
+        System.out.print("h: ");
+        int n;
+        n = scan.nextInt();
+        int counter1 = 0;
+        int counter2 = 0;
+        System.out.print("c: ");
+        String a = scan.next(); //Character
+        char b = a.charAt(0);
+
+        if(n%2==0){
+            System.out.println("Invalid number!");
+            return;
+        }
+
+        for (int i = 1; i < n*2; i++)
+        {
+
+            for (int spc = n - counter2; spc > 0; spc--)
+            //print space
+            {
+                System.out.print(" ");
+            }
+            if (i < n)
+            {
+                counter2++;
+            }
+            else
+            {
+                counter2--;
+            }
+
+            for (int j = 0; j < counter1; j++)
+            {
+                System.out.print(b);//print Character
+                if (j < counter1 / 2)
+                 {
+                    b++;
+                 } else {
+                    b--;
+                 }
+            }
+            if (i < n)
+            {
+                 counter1 = counter1 + 2;
+            }
+            else
+            {
+            counter1 = counter1 - 2;
+            }
+
+
+        System.out.println();
+        }
     }
+
+
 
     //todo Task 5
     public void marks(){
@@ -96,27 +151,44 @@ public class App {
 
         double mark = 1;
         int sum = 0;
-        int counter = 1;
+        int counter = 0;
         double average = 0;
         int negative = 0;
-        System.out.print("Number " + counter++ + ": ");
+
+        System.out.print("Mark " + ++counter + ": ");
         mark=scan.nextDouble();
+        average += mark;
 
         while(mark > 0){
-            System.out.print("Number " + counter++ + ": ");
-            mark = scan.nextDouble();
-            average = (average + mark);
 
             if(mark < 0 || mark >5 ){
                 System.out.println("Invalid mark!");
-                counter -= 1;
+                average -= mark;
+                counter--;
+
 
             } else if (mark==5) {
                 negative += 1;
             }
+
+            System.out.print("Mark " + ++counter + ": ");
+            mark = scan.nextDouble();
+            if (mark!=0){
+                average = (average + mark);
+            }
+
         }
+        if(average==0){
+            System.out.printf("Average: %.2f", average);
+            System.out.println();
+            System.out.println("Negative marks: " + negative);
+            return;
+        }
+        double averagequote = average/((double)counter-1);
+
+        System.out.printf("Average: %.2f", averagequote);
+        System.out.println();
         System.out.println("Negative marks: " + negative);
-        System.out.println("Average: " + average/counter);
     }
 
     //todo Task 6
