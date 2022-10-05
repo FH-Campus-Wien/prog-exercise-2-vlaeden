@@ -4,6 +4,17 @@ import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class App {
+    public int ceilNumber(int a, int b){
+
+        if (a % b == 0)
+    {
+        return (a / b);
+    }
+else
+    {
+        return (a / b) + 1;
+    }
+}
 
     //todo Task 1
     public void largestNumber(){
@@ -91,8 +102,8 @@ public class App {
         System.out.print("h: ");
         int n;
         n = scan.nextInt();
-        int counter1 = 0;
-        int counter2 = 0;
+        int counter1 = 1;
+        int counter2 = 1;
         System.out.print("c: ");
         String a = scan.next(); //Character
         char b = a.charAt(0);
@@ -102,7 +113,7 @@ public class App {
             return;
         }
 
-        for (int i = 1; i < n*2; i++)
+        for (int i = 0; i < n; i++)
         {
 
             for (int spc = n - counter2; spc > 0; spc--)
@@ -112,7 +123,12 @@ public class App {
             }
             if (i < n)
             {
+                if (counter2 == ceilNumber(n,2)){
+                    counter2--;
+                    counter2--;
+                }
                 counter2++;
+
             }
             else
             {
@@ -132,10 +148,12 @@ public class App {
             if (i < n)
             {
                  counter1 = counter1 + 2;
+
             }
             else
             {
             counter1 = counter1 - 2;
+
             }
 
 
