@@ -103,7 +103,7 @@ else
         int n;
         n = scan.nextInt();
         int counter1 = 1;
-        int counter2 = 1;
+        int counter2 = 0;
         System.out.print("c: ");
         String a = scan.next(); //Character
         char b = a.charAt(0);
@@ -116,27 +116,17 @@ else
         for (int i = 0; i < n; i++)
         {
 
-            for (int spc = n - counter2; spc > 0; spc--)
+            for (int spc = (n-3) - counter2; spc > 0; spc--)
             //print space
             {
                 System.out.print(" ");
             }
-            if (i < n)
-            {
-                if (counter2 == ceilNumber(n,2)){
-                    counter2--;
-                    counter2--;
-                }
                 counter2++;
 
-            }
-            else
-            {
-                counter2--;
-            }
 
             for (int j = 0; j < counter1; j++)
             {
+
                 System.out.print(b);//print Character
                 if (j < counter1 / 2)
                  {
@@ -144,8 +134,9 @@ else
                  } else {
                     b--;
                  }
+
             }
-            if (i < n)
+            if (i < (n/2))
             {
                  counter1 = counter1 + 2;
 
@@ -156,7 +147,14 @@ else
 
             }
 
-
+        if (i >= (n/2)){
+            b+=2;
+            counter2=1;
+            if (i >= ceilNumber(n,2))
+            {
+                counter2--;
+            }
+        }
         System.out.println();
         }
     }
