@@ -7,17 +7,18 @@ public class App {
     public int ceilNumber(int a, int b){
 
         if (a % b == 0)
-    {
+        {
         return (a / b);
-    }
-else
-    {
+        }
+        else
+        {
         return (a / b) + 1;
+        }
     }
-}
 
     //todo Task 1
     public void largestNumber(){
+
         Scanner scan = new Scanner(System.in);
         int counter = 1;
         double input = 1;
@@ -72,9 +73,6 @@ else
 
     }
 
-
-
-
     //todo Task 3
     public void printPyramid(){
 
@@ -98,68 +96,55 @@ else
 
     //todo Task 4
     public void printRhombus(){
+    Scanner in = new Scanner(System.in);
+
+    // load parameters
         Scanner scan = new Scanner(System.in);
+
         System.out.print("h: ");
-        int n;
-        n = scan.nextInt();
-        int counter1 = 1;
-        int counter2 = 0;
+        int h;
+        h = scan.nextInt();
+
         System.out.print("c: ");
         String a = scan.next(); //Character
         char b = a.charAt(0);
 
-        if(n%2==0){
-            System.out.println("Invalid number!");
-            return;
-        }
-
-        for (int i = 0; i < n; i++)
-        {
-
-            for (int spc = (n-3) - counter2; spc > 0; spc--)
-            //print space
-            {
-                System.out.print(" ");
-            }
-                counter2++;
-
-
-            for (int j = 0; j < counter1; j++)
-            {
-
-                System.out.print(b);//print Character
-                if (j < counter1 / 2)
-                 {
-                    b++;
-                 } else {
-                    b--;
-                 }
-
-            }
-            if (i < (n/2))
-            {
-                 counter1 = counter1 + 2;
-
-            }
-            else
-            {
-            counter1 = counter1 - 2;
-
-            }
-
-        if (i >= (n/2)){
-            b+=2;
-            counter2=1;
-            if (i >= ceilNumber(n,2))
-            {
-                counter2--;
-            }
-        }
+    // validate parameters
+    if (h % 2 == 0) {
+        System.out.println("Invalid number!");
+        return;
+    }
+        /*
+         * The following lines of Code have been taken from the Internet | https://stackoverflow.com/questions/69681723/, last visit: 06.10.2022
+         */
+    for(int i = 0; i <= h/2; i++) {
+        space((h+1) / 2-i-1);
+        line(b, i);
         System.out.println();
-        }
     }
 
+    for(int i = h/2-1; i >= 0; i--) {
+        space((h+1) / 2-i-1);
+        line(b, i);
+        System.out.println();
+    }
+}
 
+    private static void line(char character, int rowsLength) {
+
+        for (int j = rowsLength; j >= 0; j--)
+            System.out.print((char) (character - j));
+
+        for (int j = 1; j <= rowsLength; j++)
+            System.out.print((char) (character - j));
+    }
+
+    private static void space(int spaces) {
+
+        for (int i = 0; i < spaces; i++) {
+            System.out.print(" ");
+        }
+    }
 
     //todo Task 5
     public void marks(){
