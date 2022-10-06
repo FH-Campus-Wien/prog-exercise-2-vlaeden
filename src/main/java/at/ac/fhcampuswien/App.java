@@ -4,17 +4,6 @@ import java.sql.SQLOutput;
 import java.util.Scanner;
 
 public class App {
-    public int ceilNumber(int a, int b){
-
-        if (a % b == 0)
-        {
-        return (a / b);
-        }
-        else
-        {
-        return (a / b) + 1;
-        }
-    }
 
     //todo Task 1
     public void largestNumber(){
